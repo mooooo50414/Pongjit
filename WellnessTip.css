@@ -1,0 +1,78 @@
+.breathing-circle {
+  width: 8rem; /* 128px */
+  height: 8rem; /* 128px */
+  border-radius: 50%;
+  background-color: rgb(167 139 250 / 0.2); /* violet-400 with 20% opacity */
+  position: absolute;
+  transition: transform 4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.breathing-circle-sky {
+  background-color: rgb(56 189 248 / 0.2); /* sky-400 with 20% opacity */
+}
+
+.breathing-circle.inhale {
+  animation: inhale-anim 4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.breathing-circle.hold {
+  animation: hold-anim 4s linear forwards;
+}
+
+.breathing-circle.exhale {
+  animation: exhale-anim 6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes inhale-anim {
+  from { transform: scale(0.8); opacity: 0.8; }
+  to { transform: scale(1.5); opacity: 1; }
+}
+
+@keyframes hold-anim {
+  from { transform: scale(1.5); opacity: 1; }
+  to { transform: scale(1.5); opacity: 1; }
+}
+
+@keyframes exhale-anim {
+  from { transform: scale(1.5); opacity: 1; }
+  to { transform: scale(0.8); opacity: 0.8;}
+}
+
+/* PlayZone Lotus Pacer */
+.lotus-pacer {
+  transform: scale(0.8);
+  opacity: 0.8;
+  filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.5));
+  transition: transform 1s ease-in-out, opacity 1s ease-in-out;
+}
+.lotus-petal {
+    transform-origin: 50px 50px;
+    transition: transform 4s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.lotus-pacer.inhale .lotus-petal {
+    animation: lotus-inhale-anim 4s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+.lotus-pacer.hold .lotus-petal {
+    animation: lotus-hold-anim 4s linear forwards;
+}
+
+.lotus-pacer.exhale .lotus-petal {
+    animation: lotus-exhale-anim 6s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+
+@keyframes lotus-inhale-anim {
+    from { transform: scale(0.9) rotate(0deg); }
+    to { transform: scale(1.1) rotate(5deg); }
+}
+
+@keyframes lotus-hold-anim {
+    from { transform: scale(1.1) rotate(5deg); }
+    to { transform: scale(1.1) rotate(5deg); }
+}
+
+@keyframes lotus-exhale-anim {
+    from { transform: scale(1.1) rotate(5deg); }
+    to { transform: scale(0.9) rotate(0deg); }
+}
